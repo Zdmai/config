@@ -90,6 +90,10 @@ set softtabstop=2
 set backspace=indent,eol,start
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+
+set clipboard=unnamed
+
+" Goerge Hotz's config
 set number
 
 set ai
@@ -104,10 +108,4 @@ highlight Comment ctermfg=green
 hi Floaterm guibg=black
 " Set floating window border line color to cyan, and background to orange
 hi FloatermBorder guibg=orange guifg=cyan
-
-
-" ===
-" === Goyo
-" ===
-map gy :Goyo<CR>
 

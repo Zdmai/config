@@ -137,6 +137,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -157,15 +158,13 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-
-# alias python3='python'  # make the base env can be used in any shell
-
-
 export TERM="xterm-256color"
 
+# Goerge Hotz's config
 export CLICOLOR=1
 export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
-export EDITOR='vim'
+# export EDITOR='vim'
+# George Hotz's config
 
 # export HOMEBREW_NO_INSTALL_FROM_API=false
 
@@ -190,10 +189,15 @@ alias listart='limactl start debian'
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
-export JUPYTER_PATH=/opt/homebrew/share/jupyter
-export JUPYTER_CONFIG_PATH=/opt/homebrew/etc/jupyter
+# export JUPYTER_PATH=/opt/homebrew/share/jupyter
+# export JUPYTER_CONFIG_PATH=/opt/homebrew/etc/jupyter
+# 
+# export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
 
-export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+
+# brew setup 
+eval $(/opt/homebrew/bin/brew shellenv)
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -208,5 +212,8 @@ else
     fi
 fi
 unset __conda_setup
+
+conda deactivate
+conda activate base
 # <<< conda initialize <<<
 
