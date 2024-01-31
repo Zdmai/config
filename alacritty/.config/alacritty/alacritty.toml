@@ -1,0 +1,53 @@
+import = [
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/catppuccin-mocha.toml"
+  #"~/.config/alacritty/gruvbox.toml"
+]
+
+[font] 
+  normal = { family = "Liga SFMono Nerd Font", style = "Regular" }
+  size = 18.0
+
+
+[window]
+  decorations = "None"
+
+# padding = { x = 3, y = 0 }
+
+[scrolling]
+  history = 5000
+
+
+[env]
+  TERM = "xterm-256color"
+
+# add_newline = false
+# 
+# [character]
+# success_symbol = '[ #](bold green)'
+# error_symbol = "[ x](bold red)"
+# vicmd_symbol = "[ V](bold green)"
+# 
+# [git_status]
+# disabled = false
+# 
+# [git_commit]
+# commit_hash_length = 7
+# tag_disabled = false
+# only_detached = false
+# 
+# [battery]
+# disabled = true
+# 
+# [python]
+# disabled = true
+# 
+# [cmake]
+# disabled = true
+# 
+# [directory]
+# read_only = "(read only)"
+# 
+# [git_metrics]
+# disabled = false
+# format = '([+$added]($added_style)) ([-$deleted]($deleted_style)) '
