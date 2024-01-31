@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# export SELECTED="true"
 update() {
   source "$CONFIG_DIR/colors.sh"
   COLOR=$BACKGROUND_2
