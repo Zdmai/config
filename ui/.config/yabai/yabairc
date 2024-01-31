@@ -1,9 +1,41 @@
 #!/usr/bin/env sh
 
+# necessary to load scripting-addition during startup on macOS Big Sur
+# *yabai --load-sa* is configured to run through sudo without a password
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
+# mission-control desktop labels
+yabai -m space 1 --label coding
+yabai -m space 2 --label web
+yabai -m space 3 --label man/note
+yabai -m space 4 --label media
+yabai -m space 5 --label re
+yabai -m space 6 --label social
+
+
+# window rules
+# yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^(Safari|Chrome|Arc)$" space=web
+yabai -m rule --add app="^Notes$" space=notes
+yabai -m rule --add app="^ida64$" space=re
+yabai -m rule --add app="^(Transmission|哔哩哔哩)$" space=media manage=off
+yabai ndow_border_color  0x7f353535   \ndow_opacity       0.50         \-m rule --add app="^(Spotify|Music)$" space=media
+yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter|YouTube)$" space=social grid=1:1:0:0:1:1 manage=off
+# yabai -m rule --add app="^Steam$" space=games manage=off
+yabai -m rule --add app="^(Calculator|System Preferences|Archive Utility)$" manage=off
+yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
+
+# signals
+yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"
+yabai -m signal --add event=window_minimized active=yes action="if \$(yabai -m query --windows --window \$YABAI_WINDOW_ID | jq -r '.\"is-floating\"'); then yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null; fi"
+
+# specific space settings
+# yabai -m config --space mail  layout stack
+# yabai -m config --space games layout float
+
+# global settings
 yabai -m config external_bar               all:35:0     \
                 mouse_follows_focus        off          \
                 focus_follows_mouse        off          \
@@ -30,13 +62,5 @@ yabai -m config external_bar               all:35:0     \
                 left_padding               8            \
                 right_padding              8            \
                 window_gap                 10
-# Exclude problematic apps from being managed:
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
-
-yabai -m config layout bsp
 
 echo "yabai configuration loaded.."

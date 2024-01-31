@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/zdmai/.dotfiles/ui/.config/yabai'
+let g:netrw_dirhist_4='/Users/zdmai/.dotfiles/ui/.config'
+let g:netrw_dirhist_3='/Users/zdmai/.dotfiles/ui/.config/skhd'
+let g:netrw_dirhist_2='/Users/zdmai/.dotfiles/ui/.config'
+let g:netrw_dirhist_1='/Users/zdmai/.config/nvim'
+let g:netrw_dirhist_0='/Users/zdmai/.config/nvim.back'
+let g:netrw_dirhist_9='/Users/zdmai/.config/nvim.back/lua'
+let g:netrw_dirhist_8='/Users/zdmai/.config/nvim.back'
+let g:netrw_dirhist_7='/Users/zdmai/.config/nvim.back/lua/user'
+let g:netrw_dirhist_6='/Users/zdmai/.config/nvim.back/lua'

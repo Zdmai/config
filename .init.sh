@@ -108,6 +108,7 @@ conda install seaborn pandas
 conda install opencv
 conda install joblib
 conda install pytables
+conda install tqdm
 pip install tensorflow-macos
 pip install tensorflow-metal
 pip install debugpy
