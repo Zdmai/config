@@ -6,7 +6,7 @@ the config for vim and tmux is utilized the [George Hotz](https://github.com/geo
 and I really like his tmux's config file
 - it's very simple for me 
 
-![tmux](./img/tmux.png)
+![tmux](./img/ui.png)
 
 - the wallpaper is wonderful
 
