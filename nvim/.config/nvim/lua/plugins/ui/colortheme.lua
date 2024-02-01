@@ -6,6 +6,8 @@ return {
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("catppuccin")
+      -- set the visual mode select color
+      vim.api.nvim_set_hl(0, "visual", { reverse = true })
     end,
   },
   {
