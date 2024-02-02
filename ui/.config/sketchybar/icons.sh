@@ -56,6 +56,12 @@ MODE_VISUAL=􀂿
 MODE_CMD=􀂙
 MODE_PENDING=􀈏
 
+
+
+# time and calendar
+CLOCK=
+CALENDAR=
+
 export ICON_CMD=󰘳
 export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop

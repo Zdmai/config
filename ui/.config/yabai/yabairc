@@ -17,7 +17,7 @@ yabai -m space 6 --label social
 
 # window rules
 # yabai -m rule --add app="^Mail$" space=mail
-yabai -m rule --add app="^(Safari|Chrome|Arc)$" space=web
+yabai -m rule --add app="^(Chrome)$" space=web
 yabai -m rule --add app="^Notes$" space=notes
 yabai -m rule --add app="^ida64$" space=re
 yabai -m rule --add app="^(Transmission|哔哩哔哩)$" space=media manage=off
@@ -25,7 +25,8 @@ yabai ndow_border_color  0x7f353535   \ndow_opacity       0.50         \-m rule 
 yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter|YouTube)$" space=social manage=off
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Finder)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Finder|网易有道翻译)$" manage=off
+
 
 # signals
 yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"

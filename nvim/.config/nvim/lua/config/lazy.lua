@@ -17,6 +17,7 @@ require("lazy").setup({
 		{ import = "plugins.write" },
     { import = "plugins.default" },
 		{ import = "plugins.ui" },
+		{ import = "plugins.tools" },
 		{ import = "plugins" },
 	},
 	defaults = {
