@@ -1,29 +1,28 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-# ZSH_THEME="apple-custom"
-
-#ZSH_THEME="passion"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 setopt HIST_IGNORE_SPACE
 
@@ -85,6 +84,9 @@ setopt HIST_IGNORE_SPACE
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+
  plugins=(
  	# rails 
  	# git 
@@ -99,9 +101,6 @@ setopt HIST_IGNORE_SPACE
 # Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
-
-# source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # User configuration
 
@@ -126,24 +125,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# enable color support of ls and also add handy aliases
-# if [ -x /usr/bin/dircolors ]; then
-#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-#     alias ls='ls --color=auto'
-#     alias dir='dir --color=auto'
-#     alias vdir='vdir --color=auto'
-# 
-#     alias grep='grep --color=auto'
-#     alias fgrep='fgrep --color=auto'
-#     alias egrep='egrep --color=auto'
-# fi
-
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -189,9 +174,6 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -200,8 +182,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --ex
 export FZF_DEFAULT_OPTS="--ansi --border"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
-export TERM="tmux-256color"
+# export TERM="tmux-256color"
 
 
 # Goerge Hotz's config
@@ -209,8 +190,6 @@ export CLICOLOR=1
 export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
 # export EDITOR='vim'
 # George Hotz's config
-
-# export HOMEBREW_NO_INSTALL_FROM_API=false
 
 # export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.
 # export DISPLAY=:0
@@ -220,39 +199,15 @@ export TLDR_AUTO_UPDATE_DISABLED=true
 # enable the fuck command
 # eval $(thefuck --alias)
 
-
 # change the lima default name 
 export LIMA_INSTANCE=debian
+
 alias listop='limactl stop debian'
 alias listart='limactl start debian'
 
 # add the mojo to the PATH
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
-
-# export JUPYTER_PATH=/opt/homebrew/share/jupyter
-# export JUPYTER_CONFIG_PATH=/opt/homebrew/etc/jupyter
-# 
-# export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
-
-
-
-# brew setup 
-eval $(/opt/homebrew/bin/brew shellenv)
-
-
-# config the nnn
-# alias n="nnn -e"
-# function nnn () {
-#     command nnn "$@"
-# 
-#     if [ -f "$NNN_TMPFILE" ]; then
-#             . "$NNN_TMPFILE"
-#     fi
-# }
-# 
-# export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
