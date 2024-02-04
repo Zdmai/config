@@ -43,6 +43,7 @@ brew install lulu ifstat sf-symbols switchaudio-osx
 # zsh tools
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install rg eza fd bat procs          # use it in zsh, and alias it in .zshrc
 
 
 # macOS Settings

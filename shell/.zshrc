@@ -86,17 +86,22 @@ setopt HIST_IGNORE_SPACE
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
  plugins=(
- 	rails 
- 	git 
- 	textmate 
- 	ruby 
- 	lighthouse
- 	zsh-autosuggestions
- 	macos
+ 	# rails 
+ 	# git 
+ 	# textmate 
+ 	# lighthouse
+ 	# macos
+  z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  tmux
  )
 # Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
+
+# source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # User configuration
 
@@ -124,18 +129,20 @@ fi
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# if [ -x /usr/bin/dircolors ]; then
+#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#     alias ls='ls --color=auto'
+#     alias dir='dir --color=auto'
+#     alias vdir='vdir --color=auto'
+# 
+#     alias grep='grep --color=auto'
+#     alias fgrep='fgrep --color=auto'
+#     alias egrep='egrep --color=auto'
+# fi
 
 
 # colored GCC warnings and errors
@@ -143,11 +150,18 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -a'
-alias l='ls -CF'
-alias ls='ls --color=tty'
+alias ls='eza --icons'
+alias ll='eza -l'
+alias la='eza --icons -a'
 
+alias l='eza'
+
+alias cat="bat"
+alias find="fd"
+alias grep="rg"
+alias ps="procs"
+
+alias g='git'
 alias t='tmux'
 alias v='nvim'
 alias p='python3'
@@ -155,8 +169,6 @@ alias c='clear'
 # alias ssh="TERM=xterm-256color ssh"
 alias ssh="TERM=tmux-256color ssh"
 
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # update the outdated packages
 function brew() {
@@ -183,10 +195,14 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Using fd with fzf
+export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
+export FZF_DEFAULT_OPTS="--ansi --border"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# export TERM="xterm-256color"
-# export TERM="screen-256color"
+
 export TERM="tmux-256color"
+
 
 # Goerge Hotz's config
 export CLICOLOR=1
@@ -201,10 +217,7 @@ export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
 
 export TLDR_AUTO_UPDATE_DISABLED=true
 
-# make the autojump work fine
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-#enable the fuck command
+# enable the fuck command
 # eval $(thefuck --alias)
 
 
@@ -258,4 +271,3 @@ unset __conda_setup
 conda deactivate
 conda activate base
 # <<< conda initialize <<<
-
