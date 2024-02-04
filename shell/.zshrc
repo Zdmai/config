@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -96,7 +96,7 @@ setopt HIST_IGNORE_SPACE
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  tmux
+  # tmux
  )
 # Add wisely, as too many plugins slow down shell startup.
 
@@ -182,7 +182,10 @@ export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --ex
 export FZF_DEFAULT_OPTS="--ansi --border"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# export TERM="tmux-256color"
+export TERM="xterm-256color"
+
+# [[ $TMUX = "" ]] && export TERM="screen-256color"
+
 
 
 # Goerge Hotz's config

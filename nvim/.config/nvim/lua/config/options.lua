@@ -8,6 +8,7 @@ cmd("set tabstop=2")
 cmd("set softtabstop=2")
 cmd("set shiftwidth=2")
 
+-- vim.cmd("set termguicolors")
 vim.opt.completeopt = "menuone,noselect"
 
 g.mapleader = " "
@@ -41,7 +42,7 @@ opt.timeoutlen = 400
 opt.undofile = true
 opt.spell = true -- Enable spell check
 opt.spelllang = { "en", "cjk" } -- Set language: English and Chinese
-opt.spelloptions = "camel" -- Enable camel case
+opt.spelloptions = "camel" -- Enable camel caseopt
 opt.termguicolors = true -- True color support
 -- opt.timeoutlen = 500 -- Set wait time
 
