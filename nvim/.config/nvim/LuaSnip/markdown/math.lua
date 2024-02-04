@@ -16,9 +16,38 @@ local get_visual = function(args, parent)
     return sn(nil, i(1))
   end
 end
+
 local tex = require("util.latex")
 
 return {
-  s({ trig = "ii", snippetType = "autosnippet" }, fmta("$<>$", i(1))),
+  s({ trig = "mm", snippetType = "autosnippet" }, fmta("$<>$", i(1))),
   s({ trig = "dd", snippetType = "autosnippet" }, fmta("$$\n<>\n$$", i(1))),
+  s(
+    { trig = "\\num", snippetType = "autosnippet" },
+    f(function()
+      return "\\nonumber"
+    end)
+  ),
+  s(
+    { trig = "align", snippetType = "autosnippet" },
+    fmta(
+      [[
+  \begin{align}
+  <>
+  \end{align}
+  ]],
+      i(1)
+    )
+  ),
+  s(
+    { trig = "aligned", snippetType = "autosnippet" },
+    fmta(
+      [[
+  \begin{aligned}
+  <>
+  \end{aligned}
+  ]],
+      i(1)
+    )
+  ),
 }

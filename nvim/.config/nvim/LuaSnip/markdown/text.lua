@@ -24,6 +24,12 @@ return {
       return snip.env.TM_SELECTED_TEXT[1] or {}
     end, {}) })
   ),
+  s(
+    "img\\",
+    fmta("![<>](<>)", { i(1), f(function(_, snip)
+      return snip.env.TM_SELECTED_TEXT[1] or {}
+    end, {}) })
+  ),
   s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1))),
   s({ trig = ";t", snippetType = "autosnippet" }, fmta("*<>*", i(1))),
   s({ trig = "xx", snippetType = "autosnippet" }, fmta("$\\times$", {})),

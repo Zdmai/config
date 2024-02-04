@@ -38,6 +38,11 @@ autocmd("BufEnter", {
   command = "set fo-=c fo-=r fo-=o",
 })
 
+-- autocmd("BufEnter", {
+--   pattern = "md",
+--   command = ":MarkdownPreview",
+-- })
+
 -- vim.api.nvim_create_autocmd({ "FileType", "InsertLeave" }, {
 --   pattern = "tex",
 --   callback = require("util.latex").format,

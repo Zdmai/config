@@ -151,12 +151,12 @@ alias ls='ls --color=tty'
 alias t='tmux'
 alias v='nvim'
 alias p='python3'
-alias r='ranger'
 alias c='clear'
 # alias ssh="TERM=xterm-256color ssh"
 alias ssh="TERM=tmux-256color ssh"
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # update the outdated packages
 function brew() {
@@ -165,6 +165,16 @@ function brew() {
   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
     sketchybar --trigger brew_update
   fi
+}
+
+# config the yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

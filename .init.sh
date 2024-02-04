@@ -23,7 +23,7 @@ brew install --cask font-sf-mono-nerd-font-ligaturized
 brew install jq gh ripgrep mas
 
 brew install yabai
-brew install sketchybar skhd
+brew install sketchybar skhd borders
 
 brew install --cask alacritty vlc font-hack-nerd-font meetingbar cutter karabiner-elements
 

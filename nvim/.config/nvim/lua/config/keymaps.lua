@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map('n', '<leader>h', ':nohlsearch<CR>')
+-- map('n', '<leader>h', ':nohlsearch<CR>')
 
 if vim.fn.has("nvim-0.9.0") == 1 then
 	vim.opt.splitkeep = "screen"
@@ -11,6 +11,7 @@ end
 
 local util = require("util")
 
+map({ "i", "v" }, "ii", "<ESC>", {})
 
 -- Paste over currently selected text without yanking it
 map("v", "p", '"_dP', {silent = true})
@@ -48,7 +49,7 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 -- map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+-- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 -- ===
 -- Delete window in `mini.bufremove`
