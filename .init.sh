@@ -27,6 +27,9 @@ brew install sketchybar skhd borders
 
 brew install --cask alacritty vlc font-hack-nerd-font meetingbar cutter karabiner-elements
 
+# install kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 

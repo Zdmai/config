@@ -151,8 +151,7 @@ alias t='tmux'
 alias v='nvim'
 alias p='python3'
 alias c='clear'
-# alias ssh="TERM=xterm-256color ssh"
-alias ssh="TERM=tmux-256color ssh"
+alias ssh="TERM=xterm-256color ssh"
 
 
 # update the outdated packages
@@ -181,10 +180,6 @@ function y() {
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
 export FZF_DEFAULT_OPTS="--ansi --border"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-export TERM="xterm-256color"
-
-# [[ $TMUX = "" ]] && export TERM="screen-256color"
 
 
 
