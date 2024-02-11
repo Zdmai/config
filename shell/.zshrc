@@ -151,6 +151,7 @@ alias t='tmux'
 alias v='nvim'
 alias p='python3'
 alias c='clear'
+alias doc='pydoc'
 alias ssh="TERM=xterm-256color ssh"
 
 

@@ -40,8 +40,8 @@ opt.numberwidth = 2
 opt.signcolumn = "yes"
 opt.timeoutlen = 400
 opt.undofile = true
-opt.spell = true -- Enable spell check
-opt.spelllang = { "en", "cjk" } -- Set language: English and Chinese
+opt.spell = true -- enable spell check
+opt.spelllang    = { "en", "cjk" } -- set language: english and chinese
 opt.spelloptions = "camel" -- Enable camel caseopt
 opt.termguicolors = true -- True color support
 -- opt.timeoutlen = 500 -- Set wait time
@@ -49,7 +49,7 @@ opt.termguicolors = true -- True color support
 
 vim.wo.number = true
 
-vim.cmd("set colorcolumn=80")
+-- vim.cmd("set colorcolumn=80")
 
 if vim.fn.has("nvim-0.9.0") == 1 then
 	opt.splitkeep = "screen"
