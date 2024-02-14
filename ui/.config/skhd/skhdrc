@@ -145,6 +145,11 @@ shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7; sketchyba
 shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8; sketchybar --trigger windows_on_spaces
 shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9; sketchybar --trigger windows_on_spaces
 
+# 浮动/不浮动窗口 float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float;yabai -m window --grid 4:4:1:1:2:2
+
+# open an kitty terminal
+# cmd - return : open -a kitty
 
 # focus monitor
 # ctrl + alt - z  : yabai -m display --focus prev

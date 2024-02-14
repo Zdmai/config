@@ -9,6 +9,16 @@ echo "Installing Brew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
 
+# some importent
+brew install git maxtex btop wget svim fyabai make cmake
+brew install lulu ifstat sf-symbols switchaudio-osx 
+
+# install some tools
+brew install neofetch
+brew install llvm gcc clang qemu lima
+brew install neovim vim
+brew instal pyright lua-language-server
+
 # Brew Taps
 echo "Installing Brew Formulae..."
 brew tap homebrew/cask-fonts
@@ -32,24 +42,14 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-
-# install some tools
-brew install neofetch
-brew install llvm gcc clang qemu lima
-brew install neovim vim
-brew instal pyright lua-language-server
-
-# some importent
-brew install git maxtex btop wget svim fyabai make cmake
-brew install lulu ifstat sf-symbols switchaudio-osx 
 
 # zsh tools
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install z
 brew install rg eza fd bat procs          # use it in zsh, and alias it in .zshrc
 
 

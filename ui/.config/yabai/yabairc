@@ -4,6 +4,8 @@
 # *yabai --load-sa* is configured to run through sudo without a password
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+
+# sketchybar settings
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
 # mission-control desktop labels
@@ -14,6 +16,8 @@ yabai -m space 4 --label media
 yabai -m space 5 --label re
 yabai -m space 6 --label social
 
+# set the space 6 to float display the windows
+yabai -m config --space 6 layout float
 
 # window rules
 # yabai -m rule --add app="^Mail$" space=mail
@@ -21,12 +25,14 @@ yabai -m rule --add app="^(Chrome)$" space=web
 yabai -m rule --add app="^Notes$" space=notes
 yabai -m rule --add app="^ida64$" space=re
 yabai -m rule --add app="^(Transmission|哔哩哔哩|Music|Spotify|YouTube)$" space=media manage=off
+
 yabai ndow_border_color  0x7f353535   \ndow_opacity       0.50         \-m rule --add app="^(Spotify|Music)$" space=media
-yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=social manage=off
+
+yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=social layout float border=off
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Finder|网易有道翻译|Font Book|PigchaProxy)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|网易有道翻译|Font Book|PigchaProxy)$" manage=off
 
 
 # signals
@@ -39,7 +45,7 @@ yabai -m signal --add event=window_minimized active=yes action="if \$(yabai -m q
 
 
 # global settings
-yabai -m config external_bar               all:35:0     \
+yabai -m config external_bar               all:32:0     \
                 mouse_follows_focus        off          \
                 focus_follows_mouse        off          \
                 window_zoom_persist        off          \
@@ -67,6 +73,7 @@ yabai -m config external_bar               all:35:0     \
                 window_gap                 8            \
                 layout                     bsp
 
+# the starting item of the sketchybar
 borders width=5.0 style=round width=3.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 &
 
 # active_color=0xffe1e3e4 inactive_color=0xff494d64
