@@ -148,8 +148,17 @@ shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9; sketchyba
 # 浮动/不浮动窗口 float / unfloat window and center on screen
 alt - t : yabai -m window --toggle float;yabai -m window --grid 4:4:1:1:2:2
 
-# open an kitty terminal
-# cmd - return : open -a kitty
+# open terminal, blazingly fast compared to iTerm/Hyper
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# Arrow Keys
+fn - h : skhd -k "left"
+fn - j : skhd -k "down"
+fn - k : skhd -k "up"
+fn - l : skhd -k "right"
+
+# open Google Chrome
+cmd + shift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome # --single-instance -d ~
 
 # focus monitor
 # ctrl + alt - z  : yabai -m display --focus prev
@@ -186,5 +195,4 @@ shift + ctrl - s : yabai -m window --move rel:0:20
 
 # toggle sticky(+float), picture-in-picture
 alt - p : yabai -m window --toggle sticky --toggle pip
-
 

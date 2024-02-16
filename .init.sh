@@ -10,6 +10,7 @@ echo "Installing Brew..."
 brew analytics off
 
 # some importent
+echo "Installing some importent tools"
 brew install git maxtex btop wget svim fyabai make cmake
 brew install lulu ifstat sf-symbols switchaudio-osx 
 
@@ -21,21 +22,21 @@ brew instal pyright lua-language-server
 
 # Brew Taps
 echo "Installing Brew Formulae..."
-brew tap homebrew/cask-fonts
 brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
 
 
 # install SF Font
-brew tap shaunsingh/SFMono-Nerd-Font-Ligaturized
-brew install --cask font-sf-mono-nerd-font-ligaturized
+git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
+mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
+rm -rf /tmp/SFMono_Nerd_Font/
 
 brew install jq gh ripgrep mas
 
 brew install yabai
 brew install sketchybar skhd borders
 
-brew install --cask alacritty vlc font-hack-nerd-font meetingbar cutter karabiner-elements
+brew install --cask alacritty vlc meetingbar cutter
 
 # install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -44,7 +45,6 @@ curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.
 
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 
 # zsh tools
 brew install zsh-autosuggestions
