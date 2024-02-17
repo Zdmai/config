@@ -196,3 +196,23 @@ shift + ctrl - s : yabai -m window --move rel:0:20
 # toggle sticky(+float), picture-in-picture
 alt - p : yabai -m window --toggle sticky --toggle pip
 
+# set the key that move the focus between the windows
+ctrl - h [
+  *           : yabai -m window --focus west
+  "Terminal"  ~
+]
+
+ctrl - j [
+  *           : yabai -m window --focus south
+  "Terminal"  ~
+]
+
+ctrl - k [
+  *           : yabai -m window --focus north
+  "Terminal"  ~
+]
+
+ctrl - l [
+  *           : yabai -m window --focus east
+  "Terminal"  ~
+]

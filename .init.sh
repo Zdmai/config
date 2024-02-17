@@ -11,8 +11,8 @@ brew analytics off
 
 # some importent
 echo "Installing some importent tools"
-brew install git maxtex btop wget svim fyabai make cmake
-brew install lulu ifstat sf-symbols switchaudio-osx 
+brew install git maxtex btop wget svim fyabai make cmake 
+brew install ifstat sf-symbols switchaudio-osx 
 
 # install some tools
 brew install neofetch
@@ -47,6 +47,7 @@ curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # zsh tools
+brew install starship
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install z
