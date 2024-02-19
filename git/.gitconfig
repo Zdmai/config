@@ -7,8 +7,6 @@
 
 [color]
 	ui = true
-
-
 [http]
 	proxy = http://127.0.0.1:15732
 [https]

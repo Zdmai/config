@@ -94,10 +94,10 @@ shift + alt - t : yabai -m window --toggle sticky
 
 
 # focus window
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
-alt - k : yabai -m window --focus north
-alt - j : yabai -m window --focus south
+# alt - h : yabai -m window --focus west
+# alt - l : yabai -m window --focus east
+# alt - k : yabai -m window --focus north
+# alt - j : yabai -m window --focus south
 
 # swap managed window
 shift + alt - h : yabai -m window --swap west
@@ -149,7 +149,8 @@ shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9; sketchyba
 alt - t : yabai -m window --toggle float;yabai -m window --grid 4:4:1:1:2:2
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty 
 
 # Arrow Keys
 fn - h : skhd -k "left"
@@ -195,24 +196,3 @@ shift + ctrl - s : yabai -m window --move rel:0:20
 
 # toggle sticky(+float), picture-in-picture
 alt - p : yabai -m window --toggle sticky --toggle pip
-
-# set the key that move the focus between the windows
-ctrl - h [
-  *           : yabai -m window --focus west
-  "Terminal"  ~
-]
-
-ctrl - j [
-  *           : yabai -m window --focus south
-  "Terminal"  ~
-]
-
-ctrl - k [
-  *           : yabai -m window --focus north
-  "Terminal"  ~
-]
-
-ctrl - l [
-  *           : yabai -m window --focus east
-  "Terminal"  ~
-]

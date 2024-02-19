@@ -31,10 +31,25 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- move to window using the <ctrl> hjkl keys
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+-- map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+-- map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+-- map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+-- map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+vim.cmd([[
+function! TmuxYabaiOrSplitSwitch(wincmd, direction)
+  let previous_winnr = winnr()
+  silent! execute "wincmd " . a:wincmd
+  if previous_winnr == winnr()
+    call system("tmux-yabai.sh " . a:direction)
+  endif
+endfunction
+
+nnoremap <C-h> :call TmuxYabaiOrSplitSwitch('h', 'west')<cr>
+nnoremap <C-j> :call TmuxYabaiOrSplitSwitch('j', 'south')<cr>
+nnoremap <C-k> :call TmuxYabaiOrSplitSwitch('k', 'north')<cr>
+nnoremap <C-l> :call TmuxYabaiOrSplitSwitch('l', 'east')<cr>
+]])
 
 -- windows resize and split
 map("n", "<Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })

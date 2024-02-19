@@ -34,6 +34,26 @@ yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opac
 
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|网易有道翻译|Font Book|PigchaProxy)$" manage=off
 
+# move between the windows
+ctrl - h [
+  *           : yabai -m window --focus west
+  "Alacritty"  ~
+]
+
+ctrl - j [
+  *           : yabai -m window --focus south
+  "Alacritty"  ~
+]
+
+ctrl - k [
+  *           : yabai -m window --focus north
+  "Alacritty"  ~
+]
+
+ctrl - l [
+  *           : yabai -m window --focus east
+  "Alacritty"  ~
+]
 
 # signals
 yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"

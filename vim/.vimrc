@@ -30,12 +30,19 @@ map sq <C-w>t<C-w>K<CR>
 map t- :-tabnext<CR>
 map t= :+tabnext<CR>
 
+" move focus
+function! TmuxYabaiOrSplitSwitch(wincmd, direction)
+  let previous_winnr = winnr()
+  silent! execute "wincmd " . a:wincmd
+  if previous_winnr == winnr()
+    call system("tmux-yabai.sh " . a:direction)
+  endif
+endfunction
 
-" let me move in diffient window more quickly 
-map <C-k> <C-w>k
-map <C-j> <C-w>j
-map <C-l> <C-w>l
-map <C-h> <C-w>h
+nnoremap <silent> <C-h> :call TmuxYabaiOrSplitSwitch('h', 'west')<cr>
+nnoremap <silent> <C-j> :call TmuxYabaiOrSplitSwitch('j', 'south')<cr>
+nnoremap <silent> <C-k> :call TmuxYabaiOrSplitSwitch('k', 'north')<cr>
+nnoremap <silent> <C-l> :call TmuxYabaiOrSplitSwitch('l', 'east')<cr>
 
 
 "------------------------------------------------------------------"
