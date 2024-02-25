@@ -87,6 +87,25 @@ cmd - 7 : yabai -m space --focus 7
 cmd - 8 : yabai -m space --focus 8
 cmd - 9 : yabai -m space --focus 9
 
+ctrl - h [
+  *           : yabai -m window --focus west
+  "Kitty"  ~
+]
+
+ctrl - j [
+  *           : yabai -m window --focus south
+  "Kitty"  ~
+]
+
+ctrl - k [
+  *           : yabai -m window --focus north
+  "Kitty"  ~
+]
+
+ctrl - l [
+  *           : yabai -m window --focus east
+  "Kitty"  ~
+]
 
 # toggle window float
 shift + alt - f : yabai -m window --toggle float; sketchybar --trigger window_focus
@@ -149,8 +168,8 @@ shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9; sketchyba
 alt - t : yabai -m window --toggle float;yabai -m window --grid 4:4:1:1:2:2
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty 
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty 
 
 # Arrow Keys
 fn - h : skhd -k "left"

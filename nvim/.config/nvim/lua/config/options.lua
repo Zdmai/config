@@ -38,7 +38,7 @@ opt.fillchars = { eob = " " }
 opt.number = true
 opt.numberwidth = 2
 opt.signcolumn = "yes"
-opt.timeoutlen = 400
+-- opt.timeoutlen = 400
 opt.undofile = true
 opt.spell = true -- enable spell check
 opt.spelllang    = { "en", "cjk" } -- set language: english and chinese

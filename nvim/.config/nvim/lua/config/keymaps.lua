@@ -59,6 +59,8 @@ map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window wid
 map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 
+-- 
+
 -- buffers
 -- ===
 map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })

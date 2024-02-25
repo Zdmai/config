@@ -28,32 +28,15 @@ yabai -m rule --add app="^(Transmission|哔哩哔哩|Music|Spotify|YouTube)$" sp
 
 yabai ndow_border_color  0x7f353535   \ndow_opacity       0.50         \-m rule --add app="^(Spotify|Music)$" space=media
 
-yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=social layout float border=off
+yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=social manage=off
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|网易有道翻译|Font Book|PigchaProxy)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译)$" manage=off
+
+# yabai -m rule --add app="^()$" layout float manage=off
 
 # move between the windows
-ctrl - h [
-  *           : yabai -m window --focus west
-  "Alacritty"  ~
-]
-
-ctrl - j [
-  *           : yabai -m window --focus south
-  "Alacritty"  ~
-]
-
-ctrl - k [
-  *           : yabai -m window --focus north
-  "Alacritty"  ~
-]
-
-ctrl - l [
-  *           : yabai -m window --focus east
-  "Alacritty"  ~
-]
 
 # signals
 yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"
