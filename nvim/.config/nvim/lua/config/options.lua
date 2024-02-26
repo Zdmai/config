@@ -11,7 +11,7 @@ cmd("set shiftwidth=2")
 -- vim.cmd("set termguicolors")
 vim.opt.completeopt = "menuone,noselect"
 
-g.mapleader = " "
+
 g.tex_flavor = "latex"
 
 -- Fix markdown indentation settings

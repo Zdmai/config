@@ -61,6 +61,9 @@ export LIMA_INSTANCE=debian
 alias listop='limactl stop debian'
 alias listart='limactl start debian'
 
+# update yabai when upgrade it 
+alias yup='~/.bin/yabai_update.sh'
+
 # update the outdated packages
 function brew() {
   command brew "$@" 
@@ -128,5 +131,6 @@ unset __conda_setup
 conda deactivate
 conda activate base
 # <<< conda initialize <<<
+
 
 eval "$(starship init zsh)"

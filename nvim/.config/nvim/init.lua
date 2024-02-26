@@ -1,7 +1,7 @@
-require("config.keymaps")
 require("config.options")
+require("user.user")
+require("config.keymaps")
 require("config.autocmds")
 require("config.lazy")
-require("user.user")
 
 -- test for stow 

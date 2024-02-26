@@ -63,14 +63,14 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 
 -- buffers
 -- ===
-map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
--- map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
--- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+-- map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+-- map({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 -- ===
 -- Delete window in `mini.bufremove`
--- map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
+map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 
 -- search
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
