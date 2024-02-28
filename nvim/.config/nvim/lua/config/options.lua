@@ -30,6 +30,10 @@ opt.fillchars = {
   eob = ' ',
 }
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 opt.clipboard = "unnamed"
 opt.backup = false
 opt.relativenumber = true
@@ -40,7 +44,7 @@ opt.numberwidth = 2
 opt.signcolumn = "yes"
 -- opt.timeoutlen = 400
 opt.undofile = true
-opt.spell = true -- enable spell check
+opt.spell = false -- enable spell check
 opt.spelllang    = { "en", "cjk" } -- set language: english and chinese
 opt.spelloptions = "camel" -- Enable camel caseopt
 opt.termguicolors = true -- True color support

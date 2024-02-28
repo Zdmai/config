@@ -4,6 +4,9 @@
 echo "Installing commandline tools..."
 xcode-select --install
 
+echo "Install Rosetta ....."
+softwareupdate --install-rosetta
+
 # Install Brew
 echo "Installing Brew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -11,30 +14,36 @@ brew analytics off
 
 # some importent
 echo "Installing some importent tools"
-brew install git maxtex btop wget svim fyabai make cmake 
-brew install ifstat sf-symbols switchaudio-osx 
+brew install maxtex btop wget svim fyabai make cmake stow
+brew install ifstat switchaudio-osx # sf-symbols 
 
 # install some tools
 brew install neofetch
 brew install llvm gcc clang qemu lima
 brew install neovim vim
-brew instal pyright lua-language-server
+brew install pyright lua-language-server
 
 # Brew Taps
 echo "Installing Brew Formulae..."
 brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
+brew tap zegervdv/zathura
 
 
-# install SF Font
+# install SF Font for mac
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
 mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
+# for linux
+# mkdir $HOME/.local/share/fonts
+# mv /tmp/SFMono_Nerd_Font/* $HOME/.local/share/fonts
 rm -rf /tmp/SFMono_Nerd_Font/
 
 brew install jq gh ripgrep mas
+gh auth login
 
 brew install yabai
 brew install sketchybar skhd borders
+brew install zathura
 
 brew install --cask alacritty vlc meetingbar cutter
 
@@ -132,6 +141,8 @@ brew services start yabai
 brew services start sketchybar
 brew services start svim
 
+echo "Install some chat app"
+brew install discord element slack
 
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."

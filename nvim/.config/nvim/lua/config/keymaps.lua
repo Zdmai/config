@@ -52,25 +52,27 @@ nnoremap <C-l> :call TmuxYabaiOrSplitSwitch('l', 'east')<cr>
 ]])
 
 -- windows resize and split
-map("n", "<Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
-
--- 
 
 -- buffers
 -- ===
 -- map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 -- map({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 -- ===
 -- Delete window in `mini.bufremove`
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
+
+-- Move text up and down
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", {})
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", {})
 
 -- search
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })

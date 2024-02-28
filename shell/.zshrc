@@ -70,6 +70,7 @@ function brew() {
 
   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
     sketchybar --trigger brew_update
+    ~/.bin/yabai_update.sh
   fi
 }
 
