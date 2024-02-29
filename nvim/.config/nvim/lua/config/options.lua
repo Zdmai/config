@@ -34,6 +34,9 @@ opt.fillchars = {
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- quick load the nvim
+vim.loader.enable()
+
 opt.clipboard = "unnamed"
 opt.backup = false
 opt.relativenumber = true

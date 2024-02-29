@@ -1,4 +1,12 @@
 # User configuration
+# Homebrew setup
+if [[ $(uname -m) == 'arm64' ]]; then
+    BREWPATH=/opt/homebrew/bin
+else
+    BREWPATH=/usr/local/bin
+fi
+export PATH=$BREWPATH:$PATH
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -133,5 +141,8 @@ conda deactivate
 conda activate base
 # <<< conda initialize <<<
 
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+export PATH=/opt/homebrew/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
 
 eval "$(starship init zsh)"
