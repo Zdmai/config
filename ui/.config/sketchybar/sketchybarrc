@@ -8,6 +8,15 @@ PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are st
 
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3 # All paddings use this value (icon, label, background)
+ITEM_MARGIN=5
+LABEL_FONT="$FONT:Medium:12.0"
+
+# Bar
+BAR_HEIGHT=32
+BAR_COLOR=0xAA36485E
+BAR_BORDER_COLOR="$ORANGE"
+BAR_BORDER_WIDTH=0
+BAR_PADDING=10
 
 # Setting up and starting the helper process
 HELPER=git.felix.helper
@@ -27,12 +36,25 @@ bar=(
   shadow=off
   position=top
   sticky=on
-  padding_right=10
-  padding_left=10
-  y_offset=-5
-  margin=10
+  # y_offset=-5
+  # margin=10
   topmost=window
   corner_radius=5
+
+  y_offset=0
+  height="$BAR_HEIGHT"
+  # border_width="$BAR_BORDER_WIDTH"
+  margin=-"$BAR_BORDER_WIDTH"  # NOTE: same as the minus `border_width` to remove the borders on both sides
+  corner_radius=0
+
+  padding_left="$BAR_PADDING"
+  padding_right="$BAR_PADDING"
+
+  # topmost=off  # set to `window` to avoid sketchybar being covered by windows
+
+  notch_width=350
+
+  font_smoothing=off
 )
 
 sketchybar --bar "${bar[@]}"
@@ -64,11 +86,27 @@ defaults=(
 
 sketchybar --default "${defaults[@]}"
 
+# -----------------------------------
+# -------- Custom Events
+# -----------------------------------
+sketchybar \
+  --add event bluetooth_on "IOBluetoothHostControllerPoweredOnNotification"   \
+  --add event bluetooth_off "IOBluetoothHostControllerPoweredOffNotification" \
+  \
+  --add event yabai_loaded              \
+  --add event yabai_window_created      \
+  --add event yabai_window_moved        \
+  --add event yabai_window_focused      \
+  --add event yabai_window_resized      \
+  --add event yabai_application_visible \
+  --add event skhd_space_type_changed   \
+  --add event skhd_window_type_changed
+
 # Left
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/yabai.sh"
 
 # Center
 # source "$ITEM_DIR/spotify.sh"

@@ -461,7 +461,7 @@ function icon_map() {
   "Brave Browser")
     icon_result=":brave_browser:"
     ;;
-  "Preview" | "预览" | "Skim" | "zathura")
+  "Preview" | "预览" | "Skim" | "zathura"|"sioyek")
     icon_result=":pdf:"
     ;;
   "Obsidian")

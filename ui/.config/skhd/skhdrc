@@ -177,6 +177,11 @@ fn - j : skhd -k "down"
 fn - k : skhd -k "up"
 fn - l : skhd -k "right"
 
+# Toggle space layout (WINKEY2)
+lctrl + rshift + lalt - b : [ "$(yabai -m query --spaces --space | jq -r '.type')" = "bsp" ] && yabai -m space --layout stack || yabai -m space --layout bsp  ; command -v sketchybar &> /dev/null && sketchybar --trigger skhd_space_type_changed
+lctrl + rshift + lalt - s : [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ] && yabai -m space --layout bsp || yabai -m space --layout stack; command -v sketchybar &> /dev/null && sketchybar --trigger skhd_space_type_changed
+lctrl + rshift + lalt - f : [ "$(yabai -m query --spaces --space | jq -r '.type')" = "float" ] && yabai -m space --layout bsp || yabai -m space --layout float; command -v sketchybar &> /dev/null && sketchybar --trigger skhd_space_type_changed
+
 # open Google Chrome
 cmd + shift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome # --single-instance -d ~
 

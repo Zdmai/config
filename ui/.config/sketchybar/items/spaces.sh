@@ -1,6 +1,8 @@
 #!/bin/bash
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
+# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
+
+SPACE_ICONS=('􀃋' '􀃍' '􀃏' '􀃑' '􀃓' '􀃕' '􀃗')
 
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)
@@ -14,8 +16,8 @@ do
   space=(
     space=$sid
     icon="${SPACE_ICONS[i]}"
-    icon.padding_left=10
-    icon.padding_right=10
+    icon.padding_left=8
+    icon.padding_right=1
     padding_left=2
     padding_right=2
     label.padding_right=20
@@ -35,7 +37,7 @@ do
 done
 
 space_creator=(
-  icon=􀆊
+  icon=􀰫􂉐
   icon.font="$FONT:Heavy:16.0"
   padding_left=10
   padding_right=8

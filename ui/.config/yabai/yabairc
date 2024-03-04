@@ -32,7 +32,7 @@ yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=soci
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译|EuDic|CrossOver|python3)$" manage=off
 
 # yabai -m rule --add app="^()$" layout float manage=off
 
@@ -76,8 +76,8 @@ yabai -m config external_bar               all:32:0     \
                 window_gap                 8            \
                 layout                     bsp
 
-# the starting item of the sketchybar
-borders width=5.0 style=round width=3.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 &
+# the starting item of the borders
+borders width=5.0 style=round width=1.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 &
 
 # active_color=0xffe1e3e4 inactive_color=0xff494d64
 

@@ -120,20 +120,20 @@ cfg config --local status.showUntrackedFiles no
 # echo "Installing Python Packages..."
 # curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
 # source $HOME/.zshrc
-# conda install -c apple tensorflow-deps
-# conda install -c conda-forge pybind11
-# conda install matplotlib
-# conda install jupyterlab
-# conda install seaborn pandas 
-# conda install opencv
-# conda install joblib
-# conda install pytables
-# conda install tqdm
-# pip install tensorflow-macos
-# pip install tensorflow-metal
-# pip install debugpy
-# pip install -U scikit-learn
-# pip install pytorch
+conda install -c apple tensorflow-deps
+conda install -c conda-forge pybind11
+conda install matplotlib
+conda install jupyterlab
+conda install seaborn pandas 
+conda install opencv
+conda install joblib
+conda install pytables
+conda install tqdm
+pip install tensorflow-macos
+pip install tensorflow-metal
+pip install debugpy
+pip install -U scikit-learn
+pip install torch torchvision
 
 # # Start Services
 # echo "Starting Services (grant permissions)..."

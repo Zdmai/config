@@ -4,4 +4,4 @@ require("config.keymaps")
 require("config.autocmds")
 require("config.lazy")
 
--- test for stow 
+-- test for stow

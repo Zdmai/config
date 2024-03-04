@@ -7,7 +7,7 @@ return {
   end,
   config = function()
     vim.g.mkdp_browser = vim.g.browser
-    vim.g.mkdp_auto_close = 0
+    -- vim.g.mkdp_auto_close = 0
     vim.keymap.set({ "n", "i" }, "<C-m>", ":MarkdownPreview<cr>", {})
   end,
 }

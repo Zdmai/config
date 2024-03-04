@@ -5,6 +5,7 @@
 
 brew=(
   icon=􀐛
+  icon.highlight_color=$RED
   label=?
   padding_right=10
   script="$PLUGIN_DIR/brew.sh"

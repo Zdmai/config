@@ -226,3 +226,4 @@ return {
     require("lualine").setup(config)
   end,
 }
+
