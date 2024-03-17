@@ -2,7 +2,7 @@
 
 # SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
 
-SPACE_ICONS=('􀃋' '􀃍' '􀃏' '􀃑' '􀃓' '􀃕' '􀃗')
+SPACE_ICONS=('􀃋' '􀃍' '􀃏' '􀃑' '􀃓' '􀃕' '􀃗' '􀃙' '􀃛' '􀕒' '􀕓' '􀕔' '􀕕' '􀕖' '􀕗')
 
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)

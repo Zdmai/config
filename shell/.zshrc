@@ -50,6 +50,12 @@ alias grep="rg"
 alias ps="procs"
 
 alias g='git'
+alias ga='git add'
+alias gpu='git push'
+alias gb='git branch'
+alias gs='git status'
+alias gc='git checkout'
+
 alias t='tmux'
 alias v='nvim'
 alias c='clear'
@@ -136,9 +142,9 @@ else
     fi
 fi
 unset __conda_setup
+# <<< conda initialize <<<
 
 conda deactivate
 conda activate base
-# <<< conda initialize <<<
 
 eval "$(starship init zsh)"

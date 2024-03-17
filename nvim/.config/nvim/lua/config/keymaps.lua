@@ -13,6 +13,8 @@ local util = require("util")
 
 map({ "i", "v" }, "ii", "<ESC>", {})
 
+map( "i", "<A-cr>", "<esc>O", { desc = "better CR", } )
+
 -- Paste over currently selected text without yanking it
 map("v", "p", '"_dP', {silent = true})
 
@@ -63,8 +65,8 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 -- ===
 -- map({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 -- map({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-map("n", "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "<Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 -- ===
 -- Delete window in `mini.bufremove`
@@ -79,12 +81,13 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 -- map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+-- map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+-- map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+-- map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+-- map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+-- map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+-- map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- add undo break-points
 map("i", ",", ",<c-g>u")
@@ -108,5 +111,5 @@ map("n", ">", "v>g")
 -- map("n", "<leader>uc", function() util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 
 -- Others
-map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 

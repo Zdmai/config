@@ -49,6 +49,8 @@ return {
           toggle = true,
           source = "filesystem",
           position = "left",
+          -- reveal_file = reveal_file, -- path to file or folder to reveal
+          reveal_force_cwd = true, -- change cwd without asking if needed
         })
       end,
       desc = "filesystem (root dir)",

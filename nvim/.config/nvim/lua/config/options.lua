@@ -7,6 +7,7 @@ cmd("set expandtab")
 cmd("set tabstop=2")
 cmd("set softtabstop=2")
 cmd("set shiftwidth=2")
+-- cmd("highlight Normal")
 
 -- vim.cmd("set termguicolors")
 vim.opt.completeopt = "menuone,noselect"
@@ -40,11 +41,11 @@ vim.loader.enable()
 opt.clipboard = "unnamed"
 opt.backup = false
 opt.relativenumber = true
-opt.smartindent = true
 opt.fillchars = { eob = " " }
 opt.number = true
-opt.numberwidth = 2
 opt.signcolumn = "yes"
+opt.numberwidth = 2
+opt.smartindent = true
 -- opt.timeoutlen = 400
 opt.undofile = true
 opt.spell = false -- enable spell check
@@ -64,14 +65,15 @@ if vim.fn.has("nvim-0.9.0") == 1 then
 end
 
 
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'FileType' }, {
-  pattern = { 'c', 'cpp', 'txt', 'c.snippets', 'cpp.snippets' },
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.softtabstop = 4
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile', 'FileType' }, {
+--   pattern = { 'c', 'cpp', 'txt', 'c.snippets', 'cpp.snippets' },
+--   callback = function()
+--     vim.opt_local.tabstop = 4
+--     vim.opt_local.shiftwidth = 4
+--     vim.opt_local.softtabstop = 4
+--   end,
+-- })
+
 
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
@@ -79,11 +81,5 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     if pos[2] > 0 and pos[2] <= vim.fn.line('$') then
       vim.api.nvim_win_set_cursor(0, { pos[2], pos[3] - 1 })
     end
-  end
-})
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 })
   end
 })

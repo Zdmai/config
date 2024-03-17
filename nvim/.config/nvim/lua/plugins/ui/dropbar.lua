@@ -2,7 +2,8 @@ return {
   "Bekaboo/dropbar.nvim",
   -- enabled = false,
   dependencies = { "nvim-telescope/telescope-fzf-native.nvim" },
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  priority = 1,
   opts = {
     general = {
       enable = function(buf, win)

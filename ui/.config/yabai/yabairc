@@ -32,7 +32,7 @@ yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter)$" space=soci
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译|EuDic|CrossOver|python3)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译|EuDic|CrossOver|python3|V2rayU|TencentMeeting|Element)$" manage=off
 
 # yabai -m rule --add app="^()$" layout float manage=off
 
@@ -69,10 +69,10 @@ yabai -m config external_bar               all:32:0     \
                 mouse_action2              resize       \
                 mouse_drop_action          swap         \
                                                         \
-                top_padding                10           \
-                bottom_padding             10           \
-                left_padding               10           \
-                right_padding              10           \
+                top_padding                8            \
+                bottom_padding             9            \
+                left_padding               9            \
+                right_padding              9           \
                 window_gap                 8            \
                 layout                     bsp
 
