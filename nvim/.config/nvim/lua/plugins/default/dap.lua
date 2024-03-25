@@ -5,9 +5,10 @@ return {
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
     "tpope/vim-fugitive",
+    "nvim-neotest/nvim-nio",
   },
   config = function()
-    require("dapui").setup()
+    require("dapui").setup({})
     require("dap-python").setup("python")
 
     local dap, dapui = require("dap"), require("dapui")

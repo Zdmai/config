@@ -169,6 +169,7 @@ alt - t : yabai -m window --toggle float;yabai -m window --grid 4:4:1:1:2:2
 
 # open terminal, blazingly fast compared to iTerm/Hyper
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd + ctrl - return : open ~
 # cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty 
 
 # Arrow Keys

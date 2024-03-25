@@ -28,11 +28,6 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -99,7 +94,7 @@ function y() {
 }
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Using fd with fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
@@ -112,12 +107,13 @@ PATH=$PATH:~/.bin
 
 # Goerge Hotz's config
 export CLICOLOR=1
-export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
+# export PS1=$'\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
 # export EDITOR='vim'
 # George Hotz's config
 
 # export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.
 # export DISPLAY=:0
+
 
 export TLDR_AUTO_UPDATE_DISABLED=true
 
@@ -129,22 +125,26 @@ export TLDR_AUTO_UPDATE_DISABLED=true
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/zdmai/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/zdmai/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+
+eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
 conda deactivate
-conda activate base
+conda activate base 
 
-eval "$(starship init zsh)"
+
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+
+# change the path color
+zstyle :prompt:pure:path color '#20F8C0'
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+
+prompt pure
