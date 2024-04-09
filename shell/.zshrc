@@ -39,8 +39,10 @@ alias ll='eza -l'
 alias la='eza --icons -a'
 alias l='eza'
 
+alias ginit='git init && echo "**/.DS_Store" > .gitignore'
+
 alias cat="bat"
-alias find="fd"
+# alias find="fd"
 alias grep="rg"
 alias ps="procs"
 
@@ -55,7 +57,7 @@ alias t='tmux'
 alias v='nvim'
 alias c='clear'
 
-alias p='python3'
+alias p='python'
 alias doc='pydoc'
 
 alias ssh="TERM=xterm-256color ssh"

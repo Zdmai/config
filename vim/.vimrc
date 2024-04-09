@@ -30,6 +30,9 @@ map sq <C-w>t<C-w>K<CR>
 map t- :-tabnext<CR>
 map t= :+tabnext<CR>
 
+map <leader>e :Ex<CR>
+let g:netrw_browse_split=2
+
 " move focus
 function! TmuxYabaiOrSplitSwitch(wincmd, direction)
   let previous_winnr = winnr()
@@ -170,6 +173,8 @@ noremap <leader><leader> :FZF<CR>
 
 " jedi config 
 " *:help jedi-vim* to see the doc
+"
+
 
 let g:jedi#completions_command = "<C-N>"
 let g:jedi#goto_command = '<leader>d'
