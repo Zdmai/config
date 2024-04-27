@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "mfussenegger/nvim-dap-python",
     "rcarriga/nvim-dap-ui",

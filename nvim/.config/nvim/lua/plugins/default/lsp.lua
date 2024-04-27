@@ -1,7 +1,8 @@
 return {
   {
     "williamboman/mason.nvim",
-    lazy = false,
+    lazy = true,
+    cmd = "Mason",
     config = function()
       require("mason").setup()
       ui = {
@@ -15,19 +16,16 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    lazy = false,
     opts = {
       auto_install = true,
       ensure_install = { "pyright" }
     },
   },
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
+    "neovim/nvim-lspconfig", dependencies = {
       "folke/neodev.nvim",
       "j-hui/fidget.nvim",
     },
-    lazy = false,
     config = function()
       require("neodev").setup({
         -- add any options here, or leave empty to use the default settings

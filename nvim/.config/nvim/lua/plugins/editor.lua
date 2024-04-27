@@ -3,7 +3,7 @@ local icon = vim.g.icons_enabled and "󰒡  " or ""
 return {
   {
     "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { { "nvim-lua/plenary.nvim", lazy = true }, },
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -22,7 +22,8 @@ return {
   },
   {
     "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true }, },
+    lazy = true,
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -48,6 +49,7 @@ return {
   },
   {
     "RRethy/vim-illuminate",
+    event = "VeryLazy",
     config = function()
       -- default configuration
       require('illuminate').configure({

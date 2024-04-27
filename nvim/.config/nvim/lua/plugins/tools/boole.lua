@@ -1,5 +1,6 @@
 return {
   "nat-418/boole.nvim",
+  lazy = true,
   opts = {
     mappings = {
       increment = "<C-a>",

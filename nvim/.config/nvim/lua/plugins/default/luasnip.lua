@@ -7,6 +7,8 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
+    event = { "InsertEnter", "CmdlineEnter" },
+    ft = { "markdown", "latex" },
     config = function()
       local types = require("luasnip.util.types")
       local ls = require("luasnip")

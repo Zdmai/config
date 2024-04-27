@@ -28,6 +28,7 @@ return {
     vim.g.mkdp_filetypes = { "markdown" }
   end,
   ft = { "markdown" },
+  lazy = true,
   keys = {
     { mode = { 'n', 'i' }, '<A-m>', "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview" },
   },

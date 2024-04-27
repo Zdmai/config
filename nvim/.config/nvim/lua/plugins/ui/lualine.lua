@@ -45,8 +45,8 @@ local config = {
     --   normal = { c = { fg = colors.fg, bg = colors.bg } },
     --   inactive = { c = { fg = colors.fg, bg = colors.bg } },
     -- },
-    -- theme = "catppuccin",
-    theme = "nightfox",
+    theme = "catppuccin",
+    -- theme = "nightfox",
   },
   sections = {
     -- these are to remove the defaults
