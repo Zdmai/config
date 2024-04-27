@@ -110,7 +110,7 @@ source "$ITEM_DIR/yabai.sh"
 
 # Center
 source "$ITEM_DIR/spotify.sh"
-source "$ITEM_DIR/media.sh"
+# source "$ITEM_DIR/media.sh"
 
 # Right
 # source "$ITEM_DIR/calendar.sh"
