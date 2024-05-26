@@ -35,6 +35,12 @@ opt.fillchars = {
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+vim.g.lazyvim_python_lsp = "pyright"
+-- vim.g.lazyvim_python_ruff = "ruff_lsp"
+
+
 -- quick load the nvim
 vim.loader.enable()
 
@@ -54,6 +60,9 @@ opt.spelloptions = "camel" -- Enable camel caseopt
 opt.termguicolors = true -- True color support
 -- opt.timeoutlen = 500 -- Set wait time
 
+opt.signcolumn = "yes"
+opt.showmode = false
+-- opt.background = "dark"
 
 vim.wo.number = true
 

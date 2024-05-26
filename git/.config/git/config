@@ -4,6 +4,8 @@
 
 [core]
 	editor = nvim
+	autocrlf = input
+	quotepath = false
 
 [color]
 	ui = true
@@ -12,6 +14,11 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = utf-8
 [http]
 	proxy = http://127.0.0.1:15732
 [https]

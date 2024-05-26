@@ -7,6 +7,11 @@ else
 fi
 export PATH=$BREWPATH:$PATH
 
+# llvm
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -96,7 +101,7 @@ function y() {
 }
 
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Using fd with fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
@@ -130,9 +135,15 @@ export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
 eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
-conda deactivate
-conda activate base 
+# conda deactivate
+# conda activate base 
+#
+#
 
+
+# if [ -f ~/.bin/git-completion.zsh ]; then
+#   ~/.bin/git-completion.zsh
+# fi
 
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
