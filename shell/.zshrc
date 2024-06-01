@@ -49,7 +49,7 @@ alias ginit='git init && echo "**/.DS_Store" > .gitignore'
 alias cat="bat"
 # alias find="fd"
 alias grep="rg"
-alias ps="procs"
+# alias ps="procs"
 
 alias g='git'
 alias ga='git add'
@@ -135,14 +135,17 @@ export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 #
 # better man page
 #
-export LESS=-R
-export LESS_TERMCAP_mb=$'\e[1;31m'
-export LESS_TERMCAP_md=$'\e[1;31m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;44;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;32m'
+# export LESS=-R
+# export LESS_TERMCAP_mb=$'\e[1;31m'
+# export LESS_TERMCAP_md=$'\e[1;31m'
+# export LESS_TERMCAP_me=$'\e[0m'
+# export LESS_TERMCAP_se=$'\e[0m'
+# export LESS_TERMCAP_so=$'\e[01;44;33m'
+# export LESS_TERMCAP_ue=$'\e[0m'
+# export LESS_TERMCAP_us=$'\e[1;4;32m'
+#
+# use nvim 
+export MANPAGER='nvim +Man!'
 
 
 eval "$(conda "shell.$(basename "${SHELL}")" hook)"

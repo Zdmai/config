@@ -19,7 +19,3 @@
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8
-[http]
-	proxy = http://127.0.0.1:15732
-[https]
-	proxy = http://127.0.0.1:15732
