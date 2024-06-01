@@ -32,7 +32,7 @@ yabai -m rule --add app="^(Discord|QQ|WeChat|Telegram Lite|Twitter|Element|Disco
 # yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译|EuDic|CrossOver|python|V2rayU|TencentMeeting|iStat Menus)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|AppCleaner|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|System Information|Steam|Alfred|Activity Monitor|Finder|Font Book|Anki|PigchaProxy|网易有道翻译|EuDic|CrossOver|python|V2rayU|TencentMeeting|iStat Menus|EasyConnect|AccessClient|Microsoft Remote Desktop Beta|Parallels Desktop)$" manage=off
 
 # yabai -m rule --add app="^()$" layout float manage=off
 
