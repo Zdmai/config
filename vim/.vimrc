@@ -4,8 +4,8 @@ set background=dark
 colorscheme DarkModeReloaded
 
 " the diffience between the map use :help map-modes
-inoremap ii <esc>
-vnoremap ii <esc>
+inoremap jk <esc>
+vnoremap jk <esc>
 
 map ! :!
 
