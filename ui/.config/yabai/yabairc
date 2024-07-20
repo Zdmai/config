@@ -77,7 +77,7 @@ yabai -m config external_bar               all:0:30     \
                 layout                     bsp
 
 # the starting item of the borders
-borders width=5.0 style=round width=1.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 &
+# borders width=5.0 style=round width=1.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 &
 
 # active_color=0xffe1e3e4 inactive_color=0xff494d64
 
