@@ -78,17 +78,17 @@ alias listop='limactl stop debian'
 alias listart='limactl start debian'
 
 # update yabai when upgrade it 
-alias yup='~/.bin/yabai_update.sh'
+# alias yup='~/.bin/yabai_update.sh'
 
 # update the outdated packages
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-    ~/.bin/yabai_update.sh
-  fi
-}
+# function brew() {
+#   command brew "$@" 
+#
+#   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+#     sketchybar --trigger brew_update
+#     ~/.bin/yabai_update.sh
+#   fi
+# }
 
 # config the yazi
 function y() {
@@ -101,7 +101,8 @@ function y() {
 }
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # Using fd with fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
@@ -148,12 +149,31 @@ export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 export MANPAGER='nvim +Man!'
 
 
-eval "$(conda "shell.$(basename "${SHELL}")" hook)"
+# eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
 # conda deactivate
 # conda activate base 
 #
 #
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/zdmai/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/zdmai/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/zdmai/.miniconda3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
 
 
 # if [ -f ~/.bin/git-completion.zsh ]; then
