@@ -110,15 +110,21 @@ open SF-Pro.dmg
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
-mas install 497799835 #xCode
+# xCode
+mas install 497799835
 
+# adding the ui(theme of zsh)
+brew install starship pure
+
+# keyboard mapping
+brew install --cask karabiner-elements
 
 source $HOME/.zshrc
 cfg config --local status.showUntrackedFiles no
 
 # Python Packages
 # echo "Installing Python Packages..."
-# curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
+curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
 # source $HOME/.zshrc
 conda install -c apple tensorflow-deps
 conda install -c conda-forge pybind11
@@ -141,6 +147,13 @@ pip install torch torchvision
 # brew services start yabai
 # brew services start sketchybar
 # brew services start svim
+
+echo "install man page of std cpp: came from cppreference"
+git clone https://github.com/jeaye/stdman.git
+cd stdman
+./configure
+sudo make install
+rm -rf stdman
 
 echo "Install some chat app"
 brew install discord element slack
