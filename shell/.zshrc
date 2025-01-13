@@ -19,11 +19,11 @@ export PATH=$BREWPATH:$PATH
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR=vim
+# else
+#   export EDITOR=nvim
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -34,10 +34,15 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 
+# use vi in zsh
+set -o vi       # when you set, you won't use ctrl-a and ctrl-b
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-
+export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 # some more ls aliases
 alias ls='eza --icons'
 alias ll='eza -l'
@@ -71,11 +76,18 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/etc/profile.d/z.sh
 
-# change the lima default name 
-export LIMA_INSTANCE=debian
+# # change the lima default name 
+# export LIMA_INSTANCE=debian
+#
+# alias listop='limactl stop debian'
+# alias listart='limactl start debian'
 
-alias listop='limactl stop debian'
-alias listart='limactl start debian'
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+
+export CMAKE_PREFIX_PATH="/usr/local/opt/qt@5"
 
 # update yabai when upgrade it 
 # alias yup='~/.bin/yabai_update.sh'
@@ -156,25 +168,7 @@ export MANPAGER='nvim +Man!'
 #
 #
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/zdmai/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/zdmai/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/mamba.sh" ]; then
-    . "/Users/zdmai/.miniconda3/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
+export PATH="/Users/zdmai/.miniconda3/bin:$PATH"  # commented out by conda initialize
 
 # if [ -f ~/.bin/git-completion.zsh ]; then
 #   ~/.bin/git-completion.zsh
@@ -196,3 +190,19 @@ zstyle ':prompt:pure:prompt:*' color cyan
 zstyle :prompt:pure:git:stash show yes
 
 prompt pure
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/zdmai/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/zdmai/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/zdmai/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
