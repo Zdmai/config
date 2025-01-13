@@ -18,9 +18,12 @@ echo "Installing some importent tools"
 brew install maxtex btop wget svim fyabai make cmake stow
 brew install ifstat switchaudio-osx sf-symbols 
 
-# install some tools
+# install some useful tools
 brew install neofetch
 brew install llvm gcc clang qemu lima sioyek yazi
+#
+# streaming player
+brew install mpv
 brew install --HEAD neovim vim
 
 echo "Install zsh tools..."
@@ -64,9 +67,17 @@ open SF-Pro.dmg
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
-
 # macOS Settings
-# echo "Changing macOS defaults..."
+echo "Changing macOS defaults..."
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE;killall Finder
+
+echo "install im-select"
+brew tap daipeihust/tap
+# change the input source smallt
+brew install im-select
+
 # defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # defaults write com.apple.spaces spans-displays -bool false
